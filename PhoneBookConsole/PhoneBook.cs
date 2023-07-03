@@ -49,6 +49,24 @@ namespace PhoneBookConsole
             }
         }
 
-        
+        // Display all contacts in phonebook
+        public void DisplayAllContacts()
+        {
+            foreach (var contact in _contacts)
+            {
+                DisplayContactDetails(contact);
+            }
+        }
+
+        // Enable search by substring (incomplete phrase)
+        public void DisplayMatchingContacts(string matchPhrase)
+        {
+            var matchingContacts = _contacts.Where(c => c.Name.Contains(matchPhrase)).ToList();
+
+            foreach(var contact in matchingContacts)
+            {
+                DisplayContactDetails(contact);
+            }
+        }
     }
 }
