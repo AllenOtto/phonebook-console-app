@@ -15,13 +15,19 @@ namespace PhoneBookConsole
             _contacts.Add(contact);
         }
 
+        // Method displays contact details for each contact
+        private void DisplayContactDetails(Contact contact)
+        {
+            Console.WriteLine($"Contact: {contact.Name}: {contact.Number}");
+        }
+
         // Display contact based on name searched
         public void SearchByName(string name)
         {
             var contact = _contacts.FirstOrDefault(c => c.Name == name);
             if(contact != null)
             {
-                Console.WriteLine($"{contact.Name}: {contact.Number}");
+                DisplayContactDetails(contact);
             } 
             else
             {
@@ -35,7 +41,7 @@ namespace PhoneBookConsole
             var contact =  _contacts.FirstOrDefault(c => c.Number == number);
             if(contact != null)
             {
-                Console.WriteLine($"Contact: {contact.Name}: {contact.Number}");
+                DisplayContactDetails(contact);
             }
             else
             {
@@ -43,6 +49,6 @@ namespace PhoneBookConsole
             }
         }
 
-
+        
     }
 }
