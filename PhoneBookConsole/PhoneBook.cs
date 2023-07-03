@@ -8,7 +8,7 @@ namespace PhoneBookConsole
 {
     internal class PhoneBook
     {
-        private List<Contact> _contacts { get; set; }
+        private List<Contact> _contacts { get; set; } = new List<Contact>();
 
         public void AddContact(Contact contact)
         {
