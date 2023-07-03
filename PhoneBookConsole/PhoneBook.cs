@@ -21,20 +21,6 @@ namespace PhoneBookConsole
             Console.WriteLine($"Contact: {contact.Name}: {contact.Number}");
         }
 
-        // Display contact based on name searched
-        public void SearchByName(string name)
-        {
-            var contact = _contacts.FirstOrDefault(c => c.Name == name);
-            if(contact != null)
-            {
-                DisplayContactDetails(contact);
-            } 
-            else
-            {
-                Console.WriteLine("Contact not found");
-            }
-        }
-
         // Display contact based on number searched
         public void SearchByNumber(string number)
         {
