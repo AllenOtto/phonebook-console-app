@@ -14,5 +14,35 @@ namespace PhoneBookConsole
         {
             _contacts.Add(contact);
         }
+
+        // Display contact based on name searched
+        public void SearchByName(string name)
+        {
+            var contact = _contacts.FirstOrDefault(c => c.Name == name);
+            if(contact != null)
+            {
+                Console.WriteLine($"{contact.Name}: {contact.Number}");
+            } 
+            else
+            {
+                Console.WriteLine("Contact not found");
+            }
+        }
+
+        // Display contact based on number searched
+        public void SearchByNumber(string number)
+        {
+            var contact =  _contacts.FirstOrDefault(c => c.Number == number);
+            if(contact != null)
+            {
+                Console.WriteLine($"Contact: {contact.Name}: {contact.Number}");
+            }
+            else
+            {
+                Console.WriteLine("Contact not found.");
+            }
+        }
+
+
     }
 }
