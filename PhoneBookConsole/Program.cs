@@ -23,10 +23,20 @@ while(userInput != "exit")
 
             break;
         case "2":
+            Console.Write("Enter contact number to search for: ");
+            var searchPhrase = Console.ReadLine();
+            phonebook.DisplayMatchingContacts(searchPhrase);
+            
             break;
         case "3":
+            Console.Write("Enter the number to search for: ");
+            var searchNumber = Console.ReadLine();
+            phonebook.SearchByNumber(searchNumber);
+
             break;
         case "4":
+            phonebook.DisplayAllContacts();
+
             break;
         case "exit":
             break;
